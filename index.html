@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Brevira: Article Summarizer</title>
+  <meta name="description" content="Privacy Policy for Brevira — Article Summarizer Chrome browser extension. Details our on-device processing, zero-telemetry architecture, and data handling practices.">
+  <style>
+    :root {
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --color-bg: #ffffff;
+      --color-surface: #f8fafc;
+      --color-border: #e2e8f0;
+      --color-text: #334155;
+      --color-text-strong: #0f172a;
+      --color-text-muted: #64748b;
+      --color-primary: #2563eb;
+      --color-callout-bg: #eff6ff;
+      --color-callout-border: #3b82f6;
+      --color-code-bg: #f1f5f9;
+      --color-table-stripe: #f8fafc;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-bg: #0f172a;
+        --color-surface: #1e293b;
+        --color-border: #334155;
+        --color-text: #cbd5e1;
+        --color-text-strong: #f8fafc;
+        --color-text-muted: #94a3b8;
+        --color-primary: #60a5fa;
+        --color-callout-bg: #1e293b;
+        --color-callout-border: #60a5fa;
+        --color-code-bg: #1e293b;
+        --color-table-stripe: #1e293b;
+      }
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1.5rem;
+    }
+
+    h1 {
+      color: var(--color-text-strong);
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin: 0 0 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .meta-box {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .meta-box strong {
+      color: var(--color-text-strong);
+    }
+
+    .placeholder-badge {
+      display: inline-block;
+      background-color: var(--color-code-bg);
+      border: 1px dashed var(--color-border);
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--color-text-strong);
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    a:hover {
+      opacity: 0.85;
+    }
+
+    .callout {
+      background-color: var(--color-callout-bg);
+      border-left: 4px solid var(--color-callout-border);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 2rem 0;
+    }
+
+    .callout p {
+      margin: 0;
+      font-size: 0.975rem;
+      color: var(--color-text);
+    }
+
+    .callout strong {
+      color: var(--color-text-strong);
+    }
+
+    h2 {
+      color: var(--color-text-strong);
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin: 2.5rem 0 1rem;
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 0.4rem;
+    }
+
+    h3 {
+      color: var(--color-text-strong);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    p {
+      margin: 0 0 1.25rem;
+    }
+
+    ul, ol {
+      margin: 0 0 1.25rem;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    li::marker {
+      color: var(--color-text-muted);
+    }
+
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.88em;
+      background-color: var(--color-code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      color: var(--color-text-strong);
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 1.5rem 0 2rem;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.925rem;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      vertical-align: top;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    th {
+      background-color: var(--color-surface);
+      color: var(--color-text-strong);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:nth-child(even) td {
+      background-color: var(--color-table-stripe);
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 2rem 1rem 3rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      th, td {
+        padding: 0.6rem 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Privacy Policy for Brevira — Article Summarizer</h1>
+      <div class="meta-box">
+        <div><strong>Effective Date:</strong> October 25, 2026</div>
+        <div><strong>Extension Version:</strong> 0.1.0</div>
+        <div><strong>Contact:</strong> <a href="mailto:brevira.support@gmail.com">brevira.support@gmail.com</a></div>
+        <div><strong>Hosting URL:</strong> <a href="https://pranavchikanis.github.io/brevira-privacy-policy/">https://pranavchikanis.github.io/brevira-privacy-policy/</a></div>
+      </div>
+    </header>
+
+    <main>
+      <aside class="callout" aria-label="Summary for Readers">
+        <p><strong>Summary for Readers:</strong> Brevira is an on-device reading assistant. When you choose to summarize a web article, the extension extracts the article text and processes it entirely on your computer using Chrome's built-in artificial intelligence (Gemini Nano). Brevira does not transmit your articles, summaries, URLs, or browsing history to external servers, third-party AI clouds, or analytics providers.</p>
+      </aside>
+
+      <section>
+        <h2>1. Scope and Purpose</h2>
+        <p>This Privacy Policy explains how the <strong>Brevira — Article Summarizer</strong> Chrome browser extension (&ldquo;Brevira&rdquo;, &ldquo;the extension&rdquo;, &ldquo;we&rdquo;) handles information when you install and use the extension.</p>
+        <p>Brevira is designed to help you read and digest long-form web articles (such as news reports, essays, blog posts, and research articles) by generating structured key-point summaries within Google Chrome's native Side Panel.</p>
+        <p>This policy applies strictly to the Brevira browser extension. It does not apply to third-party websites you visit, nor does it govern Google Chrome's underlying browser operations.</p>
+      </section>
+
+      <section>
+        <h2>2. Information Accessed and Processed</h2>
+        <p>Brevira only accesses webpage content when you explicitly initiate an action (by clicking the Brevira toolbar icon or clicking the &ldquo;Summarize Article&rdquo; button in the side panel).</p>
+        <p>When invoked, the extension accesses and processes the following information from the active browser tab:</p>
+        <ul>
+          <li><strong>Article Content:</strong> The primary narrative text of the webpage, isolated from peripheral website elements such as advertisements, navigation menus, sidebars, and comments.</li>
+          <li><strong>Article Metadata:</strong>
+            <ul>
+              <li>The document or article title.</li>
+              <li>The author byline (if provided in the webpage markup).</li>
+              <li>The article excerpt or description (if provided).</li>
+              <li>The webpage URL and domain name (used to associate summaries with the corresponding tab and display the source website).</li>
+            </ul>
+          </li>
+          <li><strong>Processing Metrics:</strong> Operational diagnostics calculated locally in your browser, including character count, substantive heading count, section sampling mode, time-to-first-token, session creation duration, inference duration, and total processing duration. These metrics exist only in volatile memory and developer console output.</li>
+        </ul>
+        <p>Brevira does <strong>not</strong> access your browsing history, bookmarks, passwords, form entries, cookies, personal account details, or content from tabs where you have not clicked the Brevira icon.</p>
+      </section>
+
+      <section>
+        <h2>3. How Information Is Used</h2>
+        <p>The information accessed from the active webpage is used strictly to provide the core functionality you request:</p>
+        <ol>
+          <li><strong>Extraction:</strong> Determining whether a readable article exists on the active page and filtering out boilerplate elements.</li>
+          <li><strong>Context Adaptation:</strong> Selecting an appropriate summary depth (short, medium, or long) based on the article's length and structural complexity.</li>
+          <li><strong>Summarization:</strong> Feeding the extracted text into Chrome's local AI model to generate concise, bulleted key points.</li>
+          <li><strong>Display:</strong> Presenting the structured summary, article metadata, and source preview inside Chrome's Side Panel alongside your active tab.</li>
+        </ol>
+        <p>We do not use your information for advertising, profiling, tracking, marketing, automated decision-making, or any purpose unrelated to generating the on-device summary.</p>
+      </section>
+
+      <section>
+        <h2>4. Local On-Device Processing</h2>
+        <p>Brevira is built around an on-device architecture. All content extraction and AI inference occur locally on your physical machine:</p>
+        <ul>
+          <li><strong>Content Extraction:</strong> The webpage document is cloned locally in memory and parsed using Mozilla's open-source Readability library (<code>@mozilla/readability</code>). The live webpage is never modified.</li>
+          <li><strong>Content Truncation &amp; Proportional Sampling:</strong> To protect system stability and fit within local AI context limits (maximum 20,000 characters), long articles are sampled across major headings (<code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>) so that lead sections, core arguments, and conclusions are represented without sending data off-device.</li>
+          <li><strong>AI Inference:</strong> Summaries are generated using Google Chrome's native on-device Summarizer API (powered by Gemini Nano). The AI model runs locally on supported devices without routing requests to external inference servers.</li>
+          <li><strong>Sanitization:</strong> Generated summaries are converted from Markdown to HTML and sanitized locally using DOMPurify (<code>dompurify</code>) to ensure safe rendering in the side panel.</li>
+        </ul>
+        <p>No external cloud large language models (such as OpenAI, Anthropic, or remote Google cloud APIs) are connected to or used by Brevira.</p>
+      </section>
+
+      <section>
+        <h2>5. Storage and Data Retention</h2>
+        <p>Brevira is designed with a minimal, ephemeral data footprint. It does <strong>not</strong> maintain a persistent history database, and it does not store your reading history across browser restarts.</p>
+        <p>The extension uses only temporary, session-scoped memory:</p>
+        <ul>
+          <li><strong>In-Memory Cache:</strong> While the Brevira side panel remains open, active summaries and extracted article structures are kept in volatile JavaScript memory (<code>Map</code> objects) so you can switch between tabs without losing progress.</li>
+          <li><strong>Session Storage (<code>sessionStorage</code>):</strong> Completed summaries are stored temporarily in browser session storage keyed by Chrome tab ID (<code>brevira_summary_[tabId]</code>). This allows Brevira to restore your summary if you switch to another tab and return during the same session.</li>
+          <li><strong>Data Lifecycle &amp; Cleanup:</strong>
+            <ul>
+              <li><strong>Background Worker Cleanup:</strong> When a tab is closed in Chrome, the background service worker listens to <code>chrome.tabs.onRemoved</code> and immediately purges that tab's authorization record and in-memory summary cache.</li>
+              <li><strong>Tab Summary Removal:</strong> When you click &ldquo;Summarize Another&rdquo; or trigger a fresh generation on an article, the previous summary for that tab is removed from both in-memory storage and <code>sessionStorage</code>.</li>
+              <li><strong>Preservation of Extracted Context:</strong> Clicking &ldquo;Summarize Another&rdquo; intentionally retains the extracted article text in memory so you can re-summarize or adjust options without having to re-extract the webpage.</li>
+              <li><strong>Session Storage Lifecycle:</strong> Closing the side panel unloads the side panel UI document from memory. However, in Chromium, <code>sessionStorage</code> for an extension page may persist across side-panel openings during the same browser session. Brevira does not guarantee an exact browser-level cleanup time for temporary session storage, though stored summaries are cleared when a tab's summary is explicitly removed (such as when re-summarizing) and are not intended to survive browser restarts.</li>
+              <li><strong>Zero Persistent Storage:</strong> Brevira does <strong>not</strong> declare or use permanent storage permissions (<code>chrome.storage.local</code>, <code>chrome.storage.sync</code>, <code>chrome.storage.session</code>, IndexedDB, or browser cookies).</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>6. Sharing and External Transmission</h2>
+        <h3>What Brevira Transmits</h3>
+        <p><strong>Brevira does not transmit any user data to external servers.</strong> Specifically:</p>
+        <ul>
+          <li>We do not operate remote application servers or databases.</li>
+          <li>Extracted webpage text, summaries, and URLs are never uploaded to the internet by Brevira.</li>
+          <li>The extension contains zero tracking pixels, third-party analytics SDKs, telemetry beacons, crash reporting libraries, or advertising networks.</li>
+          <li>We do not sell, rent, monetize, or transfer your data to any third party.</li>
+        </ul>
+
+        <h3>Distinction from Google Chrome Browser Services</h3>
+        <p>While Brevira itself makes no network requests, the extension operates within the Google Chrome browser ecosystem. Standard browser-level network traffic may occur independently of Brevira:</p>
+        <ul>
+          <li>Google Chrome communicates with Google servers according to your general Chrome browser settings and Google's overall Privacy Policy.</li>
+          <li>Chrome may download updates, verify extension safety, or synchronize browser settings if you have Chrome sync enabled.</li>
+          <li>Brevira has no control over Google Chrome's browser-level telemetry or networking.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>7. AI Model Download and Network Connectivity</h2>
+        <p>Brevira relies on Chrome's built-in on-device AI capabilities.</p>
+        <ul>
+          <li><strong>First-Time Setup:</strong> If Chrome's on-device AI model (Gemini Nano) has not yet been downloaded to your computer, Chrome must download the model components from Google's update servers before Brevira can generate summaries.</li>
+          <li><strong>Network Requirement:</strong> This initial model setup requires an active internet connection and sufficient local disk storage (Chrome requires at least 22 GB of free space on the volume hosting your Chrome profile to install the model).</li>
+          <li><strong>Chrome-Managed Download:</strong> The model download is initiated via Chrome's native <code>Summarizer.create()</code> API and handled entirely by Google Chrome's background updater. Brevira does not host, distribute, download, or manage the model binary directly; Brevira only receives progress percentage notifications from Chrome (<code>downloadprogress</code> events) to display a progress indicator in the side panel.</li>
+          <li><strong>Subsequent Operation:</strong> Once the model is installed by Chrome, article summarization runs locally on your hardware.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>8. Extension Permissions and Justifications</h2>
+        <p>In compliance with the Chrome Web Store policy of permission minimization, Brevira requests only three scoped permissions:</p>
+        
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Permission</th>
+                <th scope="col">Technical Purpose</th>
+                <th scope="col">Plain Language Justification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>activeTab</code></td>
+                <td>Grants temporary host access to the current active webpage only when the user explicitly interacts with Brevira.</td>
+                <td>Allows Brevira to read article text from the page you are currently viewing only after you click the toolbar icon. Brevira cannot see pages you do not actively summarize.</td>
+              </tr>
+              <tr>
+                <td><code>scripting</code></td>
+                <td>Allows dynamic script injection into the active document.</td>
+                <td>Used to inject the extraction script (<code>extract.js</code>) into the active webpage to identify article text and ignore navigation elements and advertisements.</td>
+              </tr>
+              <tr>
+                <td><code>sidePanel</code></td>
+                <td>Grants access to Chrome's native Side Panel API.</td>
+                <td>Allows Brevira to display the reading interface, model status, and generated summaries in a persistent panel alongside the webpage without cluttering the page itself.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Brevira deliberately avoids broad host permissions (such as <code>&lt;all_urls&gt;</code> or <code>https://*/*</code>) and does not request background data storage or identity permissions.</p>
+      </section>
+
+      <section>
+        <h2>9. User Control and Choices</h2>
+        <p>You maintain full control over your data and how the extension operates:</p>
+        <ul>
+          <li><strong>Explicit Activation:</strong> Brevira never scans or extracts webpages automatically. Summarization only occurs when you click the extension icon or trigger an explicit action.</li>
+          <li><strong>In-Progress Cancellation:</strong> You can cancel an ongoing extraction, model download wait, or summary generation at any time by clicking the cancellation or reset buttons in the side panel.</li>
+          <li><strong>Regenerating &amp; Resetting:</strong>
+            <ul>
+              <li>Clicking <strong>&ldquo;Summarize Another&rdquo;</strong> clears the generated summary for the active tab from memory and <code>sessionStorage</code> to allow a fresh summary to be created, while intentionally retaining the extracted article text in memory.</li>
+              <li>Clicking <strong>&ldquo;Analyze New Tab&rdquo;</strong> resets the active tab's in-memory extraction and summary state.</li>
+              <li>Closing a browser tab prompts the background service worker to purge that tab's authorization and cache entries.</li>
+            </ul>
+          </li>
+          <li><strong>Disabling or Removing:</strong> You can disable or uninstall Brevira at any time via Chrome's extension management page (<code>chrome://extensions</code>). Removing the extension removes all extension files and code from your browser.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>10. Changes to This Privacy Policy and Contact Information</h2>
+        <h3>Policy Updates</h3>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our implementation, browser API standards, or legal requirements. When updates occur:</p>
+        <ul>
+          <li>The updated version will be committed to the project repository and published at the public hosting URL with a revised &ldquo;Effective Date&rdquo; at the top of this document.</li>
+          <li>Users are encouraged to review this policy periodically to stay informed about how Brevira handles data.</li>
+        </ul>
+
+        <h3>Developer &amp; Contact Information</h3>
+        <p>If you have questions, feedback, or concerns regarding this Privacy Policy or Brevira's data handling practices, please contact:</p>
+        <ul>
+          <li><strong>Developer / Publisher:</strong> Pranav Chikanis</li>
+          <li><strong>Support Email:</strong> <a href="mailto:brevira.support@gmail.com">brevira.support@gmail.com</a></li>
+          <li><strong>Project Repository / Issue Tracker:</strong> <a href="https://github.com/Pranavchikanis/brevira-privacy-policy">https://github.com/Pranavchikanis/brevira-privacy-policy</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; Brevira — Article Summarizer. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
